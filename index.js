@@ -15,8 +15,9 @@ app.set('port', (process.env.PORT || 5000));
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
 
-var h = new GHHandler();
-app.get("/user/:name/repos", h.getRepos);
+let h = new GHHandler();
+app.get("/user/:name/repos", (req, res) => { h.getRepos(req, res); });
+app.get('/user/:name/repos/count', (req, res) => { h.getRepoCount(req, res); });
 
 app.listen(app.get('port'), () => {
 	console.log("Listening on port ", app.get('port'));
