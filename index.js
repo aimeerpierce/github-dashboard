@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(cors(corsOptions));
 
 var h = new GHHandler();
-app.get("/user/:name/projects", h.getProjects);
+app.get("/user/:name/repos", h.getRepos);
 
 app.listen(app.get('port'), () => {
 	console.log("Listening on port ", app.get('port'));

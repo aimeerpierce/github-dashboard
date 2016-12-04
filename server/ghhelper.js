@@ -3,7 +3,7 @@ class GHHandler {
 
 	}
 
-	getProjects(req, res) {
+	getRepos(req, res) {
 		let name = req.Params('name');
 
 
