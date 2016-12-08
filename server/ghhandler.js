@@ -5,6 +5,14 @@ class GHHandler {
 		this.helper = new GHHelper();
 	}
 
+	getName(req,res) {
+		let name = req.params.name;
+
+		this.helper.getName(name, (error, data) => {
+			res.json({data, error});
+		});
+	}
+
 	getRepos(req, res) {
 		let name = req.params.name;
 
@@ -35,7 +43,7 @@ class GHHandler {
 		let repo = req.params.repo;
 
 		this.helper.getRepoIssues(name, repo, (error, data) => {
-			res.json({issues: data, error})
+			res.json({data, error})
 		});
 	}
 

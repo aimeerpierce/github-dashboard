@@ -60,6 +60,24 @@ class GHHelper {
 		});
 
 	}
+
+	//GET /users/:username
+	getName(name,cb) {
+		const options = {
+			url: 'https://api.github.com/users/' + name ,
+			headers: {
+				'User-Agent': 'aimeerpierce'
+			}
+		};
+
+		request(options, (error, response, body) => {
+			if (error) {
+				cb(error, null);
+				return;
+			}
+			cb(null, JSON.parse(body));
+		});
+	}
 }
 
 module.exports = GHHelper;

@@ -28,6 +28,7 @@ app.use(cors(corsOptions));
 
 let h = new GHHandler();
 app.get("/user/:name/repos", (req, res) => { h.getRepos(req, res); });
+app.get("/user/:name", (req,res) => { h.getName(req,res); });
 app.get('/user/:name/repos/count', (req, res) => { h.getRepoCount(req, res); });
 app.get('/user/:name/repos/names', (req, res) => { h.getRepoNames(req, res); });
 app.get('/user/:name/:repo/issues', (req, res) => {h.getRepoIssues(req,res); });

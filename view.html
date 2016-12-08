@@ -8,20 +8,43 @@
 <body>
 	<div id="input" ng-app="githubScrub" >
         <div ng-controller="controller1">
-        <form id="form" name="form" ng-hide="name">
+        <form id="form" name="form" ng-hide="name"><center>
             <div>
-                <label>Github Username:</label>
-                <input type="text" id="name" placeholder="Enter Username" ng-model="user"/>
+                <label id="label">Github Username:</label>
+            </div>
+            <div>
+                <input type="text" id="nameInput" placeholder="Enter Username" ng-model="user"/>
             </div>
 
             <div>
-                <input type="button" id="submit" value="Submit" ng-click="submit(user)"/>
-            </div>
+                <button id="submit" value="Submit" ng-click="submit(user)">submit</button>
+            </div></center>
         </form>
-        <div ng-show="name">
-             <h1>{{name}}</h1>
-             <button ng-click="getRepos()">Get Repos</button>
-             <button ng-repeat="repo in repos">Name: {{repo.name}}</button>
+        <div class="main" ng-show="name">
+             <h1><center>Welcome {{givenName}}!</center></h1>
+             <div class="getRepo">
+                <button class="hideShit" ng-click="hideRepos()">^</button>
+                 <button ng-click="getRepos()">Get Repos</button><br>
+                 <span ng-show="repoListed" ng-repeat="repo in repos">
+                    <button class="repoButton" ng-click="assignRepo(repo.name)">{{repo.name}}</button>
+    <!--                     <span ng-repeat="issue in issues">ng-click="getIssue(repo.name)"
+                            <div>{{issue.title}}</div>
+                            <br>
+                        </span> -->
+                    <br>
+                </span>
+            </div>
+            <div class="repoDetail" ng-show="currentRepo">
+                <h2>Repo: {{currentRepo}}</h2>
+                <button ng-click="getIssue()">View Issues of {{currentRepo}}</button>
+                    <span ng-repeat="issue in issues">
+                        <div class="issueList">{{issue.title}}
+                            <button class="repoButton" ng-click="resolveIssue(issue.html_url)">Resolve</button>
+                        </div>
+                        <br>
+                    </span>
+            </div>
+
         </div>
 
         </div>
