@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio 3</title>
+    <link rel="stylesheet" type="text/css" href="view.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+	<div id="input" ng-app="githubScrub" >
+        <div ng-controller="controller1">
+        <form id="form" name="form" ng-hide="name">
+            <div>
+                <label>Github Username:</label>
+                <input type="text" id="name" placeholder="Enter Username" ng-model="user"/>
+            </div>
+
+            <div>
+                <input type="button" id="submit" value="Submit" ng-click="submit(user)"/>
+            </div>
+        </form>
+        <div ng-show="name">
+             <h1>{{name}}</h1>
+             <button ng-click="getRepos()">Get Repos</button>
+             <button ng-repeat="repo in repos">Name: {{repo.name}}</button>
+        </div>
+
+        </div>
+    </div>
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
