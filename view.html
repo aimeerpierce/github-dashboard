@@ -36,13 +36,24 @@
             </div>
             <div class="repoDetail" ng-show="currentRepo">
                 <h2>Repo: {{currentRepo}}</h2>
-                <button ng-click="getIssue()">View Issues of {{currentRepo}}</button>
-                    <span ng-repeat="issue in issues">
-                        <div class="issueList">{{issue.title}}
-                            <button class="repoButton" ng-click="resolveIssue(issue.html_url)">Resolve</button>
-                        </div>
-                        <br>
-                    </span>
+                <div>
+                    <button ng-click="getIssue()">View Issues of {{currentRepo}}</button>
+                        <span ng-repeat="issue in issues">
+                            <div class="issueList">{{issue.title}}
+                                <button class="repoButton" ng-click="resolveIssue(issue.html_url)">Resolve</button>
+                            </div>
+                            <br>
+                        </span>
+                </div>
+                <div>
+                    <button ng-click="getRepoCommits()">View Commits of {{currentRepo}}</button>
+                        <span ng-repeat="com in commits">
+                            <div>
+                                {{com.commit.message}}
+                            </div>
+                            <br>
+                        </span>
+                </div>
             </div>
 
         </div>

@@ -43,7 +43,16 @@ class GHHandler {
 		let repo = req.params.repo;
 
 		this.helper.getRepoIssues(name, repo, (error, data) => {
-			res.json({data, error})
+			res.json({data, error});
+		});
+	}
+
+	getRepoCommits(req,res) {
+		let name = req.params.name;
+		let repo = req.params.repo;
+
+		this.helper.getRepoCommits(name, repo, (error, data) => {
+			res.json({data,error});
 		});
 	}
 

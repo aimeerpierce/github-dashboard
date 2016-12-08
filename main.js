@@ -26,15 +26,21 @@ var app = angular.module('githubScrub',[]);
 		}
 		$scope.assignRepo = function(repo){
 			$scope.currentRepo = repo;
-			console.log($scope.currentRepo);
 		}
 
 		$scope.getIssue = function(){
 			$http.get('/user/'+$scope.name+'/'+$scope.currentRepo+'/issues').success(function(data){
 				$scope.issues = data.data;
-				console.log($scope.issues);
 			});
 		}
+
+		$scope.getRepoCommits = function(){
+			$http.get('/user/'+$scope.name+'/'+$scope.currentRepo+'/commits').success(function(data){
+				$scope.commits = data.data;
+				console.log(data.data);
+			});
+		}
+
 		$scope.resolveIssue = function(url){
 			$window.open(url,'_blank');
 		}
@@ -46,4 +52,5 @@ var app = angular.module('githubScrub',[]);
 				$scope.repoListed = true;
 			}
 		}
+
 	}]);

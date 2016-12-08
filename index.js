@@ -33,6 +33,7 @@ app.get('/user/:name/repos/count', (req, res) => { h.getRepoCount(req, res); });
 app.get('/user/:name/repos/names', (req, res) => { h.getRepoNames(req, res); });
 app.get('/user/:name/:repo/issues', (req, res) => {h.getRepoIssues(req,res); });
 app.get('/user/:name/:repo/collaborators', (req, res) => {h.getCollaborators(req,res); });
+app.get('/user/:name/:repo/commits', (req, res) => {h.getRepoCommits(req,res); });
 
 app.listen(app.get('port'), () => {
 	console.log("Listening on port ", app.get('port'));

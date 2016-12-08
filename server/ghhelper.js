@@ -78,6 +78,24 @@ class GHHelper {
 			cb(null, JSON.parse(body));
 		});
 	}
+
+	//GET /repos/:owner/:repo/commits
+	getRepoCommits(name,repo,cb) {
+		const options = {
+			url: 'https://api.github.com/repos/' + name + '/' + repo + '/commits',
+			headers: {
+				'User-Agent': 'aimeerpierce'
+			}
+		};
+
+		request(options, (error, response, body) => {
+			if (error) {
+				cb(error, null);
+				return;
+			}
+			cb(null, JSON.parse(body));
+		});
+	}
 }
 
 module.exports = GHHelper;
