@@ -37,8 +37,9 @@
             <div class="repoDetail" ng-show="currentRepo">
                 <h2>Repo: {{currentRepo}}</h2>
                 <div>
+                    <button class="hideShit" ng-click="hideIssues()">^</button>
                     <button ng-click="getIssue()">View Issues of {{currentRepo}}</button>
-                        <span ng-repeat="issue in issues">
+                        <span ng-show="issueListed" ng-repeat="issue in issues">
                             <div class="issueList">{{issue.title}}
                                 <button class="repoButton" ng-click="resolveIssue(issue.html_url)">Resolve</button>
                             </div>
@@ -46,13 +47,22 @@
                         </span>
                 </div>
                 <div>
+                    <button class="hideShit" ng-click="hideCommits()">^</button>
                     <button ng-click="getRepoCommits()">View Commits of {{currentRepo}}</button>
-                        <span ng-repeat="com in commits">
+                        <span ng-show="commitListed" ng-repeat="com in commits">
                             <div>
                                 {{com.commit.message}}
                             </div>
                             <br>
                         </span>
+                </div>
+                <div>
+                    <button class="hideShit" ng-click="hideAdditions()">^</button>
+                    <button ng-click="getAdditions()">View Weekly Additions and Deletions</button>
+                        <span ng-show="additionsListed" ng-repeat="stats in additions">
+                            <progress value={{x.fungi}} max="20"></progress>
+                        </span>
+
                 </div>
             </div>
 

@@ -32,13 +32,21 @@ var app = angular.module('githubScrub',[]);
 			$http.get('/user/'+$scope.name+'/'+$scope.currentRepo+'/issues').success(function(data){
 				$scope.issues = data.data;
 			});
+			$scope.issueListed = true;
 		}
 
 		$scope.getRepoCommits = function(){
 			$http.get('/user/'+$scope.name+'/'+$scope.currentRepo+'/commits').success(function(data){
 				$scope.commits = data.data;
-				console.log(data.data);
 			});
+			$scope.commitListed = true;
+		}
+
+		$scope.getAdditions = function() {
+			$http.get('/user/'+$scope.name+'/'+$scope.currentRepo+'/stats/code_frequency').success(function(data){
+				$scope.additions = data.data;
+			});
+			$scope.additionsListed = true;
 		}
 
 		$scope.resolveIssue = function(url){
@@ -50,6 +58,30 @@ var app = angular.module('githubScrub',[]);
 				$scope.repoListed = false;
 			} else {
 				$scope.repoListed = true;
+			}
+		}
+
+		$scope.hideIssues = function(){
+			if($scope.issueListed == true){
+				$scope.issueListed = false;
+			} else {
+				$scope.issueListed = true;
+			}
+		}
+
+		$scope.hideCommits = function(){
+			if($scope.commitListed == true){
+				$scope.commitListed = false;
+			} else {
+				$scope.commitListed = true;
+			}
+		}
+
+		$scope.hideAdditions = function() {
+			if($scope.additionsListed == true){
+				$scope.additonsListed = false;
+			} else {
+				$scope.additionsListed = true;
 			}
 		}
 

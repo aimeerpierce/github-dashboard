@@ -58,10 +58,19 @@ class GHHandler {
 
 	getCollaborators(req,res) {
 		let name = req.params.name;
-		let repo = req. params.repo;
+		let repo = req.params.repo;
 
 		this.helper.getCollaborators(name, repo, (error, data) => {
 			res.json({collaborators: data, error});
+		});
+	}
+
+	getAdditions(req,res) {
+		let name = req.params.name;
+		let repo = req.params.repo;
+
+		this.helper.getAdditions(name, repo, (error,data) => {
+			res.json({data,error});
 		});
 	}
 }
