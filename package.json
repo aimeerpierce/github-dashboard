@@ -1,12 +1,12 @@
 {
   "name": "ghwrap",
   "version": "0.0.1",
-  "description": "Small Wrapper for Github API",
+  "description": "Github Dashboard with Github API",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Garret Meier <meier.garret@gmail.com>",
+  "author": "Aimee Pierce <aimeerpierce@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.15.2",

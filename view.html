@@ -27,10 +27,6 @@
                  <button ng-click="getRepos()">Get Repos</button><br>
                  <span ng-show="repoListed" ng-repeat="repo in repos">
                     <button class="repoButton" ng-click="assignRepo(repo.name)">{{repo.name}}</button>
-    <!--                     <span ng-repeat="issue in issues">ng-click="getIssue(repo.name)"
-                            <div>{{issue.title}}</div>
-                            <br>
-                        </span> -->
                     <br>
                 </span>
             </div>
@@ -59,8 +55,11 @@
                 <div>
                     <button class="hideShit" ng-click="hideAdditions()">^</button>
                     <button ng-click="getAdditions()">View Weekly Additions and Deletions</button>
-                        <span ng-show="additionsListed" ng-repeat="stats in additions">
-                            <progress value={{x.fungi}} max="20"></progress>
+                        <span ng-show="additionsListed">
+                            <br>
+                            Additions: {{additions}}  <progress value={{additions}} max="1000"></progress>
+                            <br>
+                            Deletions: {{deletions}}  <progress value={{deletions}} max="1000"></progress>
                         </span>
 
                 </div>

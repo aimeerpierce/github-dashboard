@@ -1,0 +1,45 @@
+
+README:
+
+
+Aimee Pierce
+
+HOW TO RUN:
+$ npm start
+$ node index.js
+LISTENING ON PORT 5000
+
+Go to URL: localhost:5000/githubDashboard
+
+You can use any active github account - feel free to use mine: aimeerpierce
+
+You'll be able to see all of my current github Repositories by clicking 'Get Repos'.
+Click on 'tallestTree,' this repository is good example to view all of the functionality in the Github Dashboard.
+
+
+
+CODE CHECKLIST
+
+main.js
+	4-12: login code
+	21-53: api requests to the server
+	55-57: opening new tab for issue resolution
+	59-89: hiding/showing data
+
+view.html
+	use of ng-repeat:
+		26-31
+		38-43
+		49-53
+
+index.js
+	12-24: routing urls
+	29-37: make API request to ghHandler class
+
+ghhandler.js
+	4-6: constructor, instantiating the ghHelper class
+	8-75: calls to funcitons in ghHelper with parameters from the server API request
+
+ghhelper.js
+	8-116: requests to the Github API
+

@@ -4,7 +4,7 @@ var app = angular.module('githubScrub',[]);
 		$scope.submit = function(name){
 			$http.get('/user/'+name+'/repos').success(function(data){
 				$scope.name = name;
-				console.log(data);
+				//console.log(data);
 				$http.get('/user/'+$scope.name).success(function(data){
 						$scope.givenName = data.data.name;
 					});
@@ -44,7 +44,8 @@ var app = angular.module('githubScrub',[]);
 
 		$scope.getAdditions = function() {
 			$http.get('/user/'+$scope.name+'/'+$scope.currentRepo+'/stats/code_frequency').success(function(data){
-				$scope.additions = data.data;
+				$scope.additions = data.data[0][1];
+				$scope.deletions = Math.abs(data.data[0][2]);
 			});
 			$scope.additionsListed = true;
 		}
@@ -79,7 +80,7 @@ var app = angular.module('githubScrub',[]);
 
 		$scope.hideAdditions = function() {
 			if($scope.additionsListed == true){
-				$scope.additonsListed = false;
+				$scope.additionsListed = false;
 			} else {
 				$scope.additionsListed = true;
 			}

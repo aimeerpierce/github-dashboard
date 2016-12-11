@@ -16,7 +16,7 @@ app.get('/view.css', function(req,res){
 	res.sendfile('./view.css');
 });
 
-app.get('/githubScrub', function(req,res){
+app.get('/githubDashboard', function(req,res){
 	res.sendfile('./view.html');
 });
 app.get('/main.js', function(req,res){
