@@ -17,7 +17,6 @@ You'll be able to see all of my current github Repositories by clicking 'Get Rep
 Click on 'tallestTree,' this repository is good example to view all of the functionality in the Github Dashboard.
 
 
-
 CODE CHECKLIST
 
 main.js

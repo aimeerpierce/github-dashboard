@@ -2,7 +2,7 @@ const request = require('request');
 
 class GHHelper {
 	constuctor() {
-
+		//
 	}
 
 	getRepoList(name, cb) {
