@@ -8,6 +8,9 @@ Node / Express
 HTML / CSS  
 Github API
 
+## Why did I make this?  
+I made this github dashboard project to get experience developing with APIs in Node. With the mountains of public repositories on github there was a lot of content to work with, and I had fun learning about how to utilize an API. 
+
 ## How to Run
 First, clone the repository:  
 $ git clone https://github.com/aimeerpierce/github-dashboard.git 
